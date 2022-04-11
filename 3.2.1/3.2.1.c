@@ -9,12 +9,12 @@ struct Lista {
 
 int main(void){
 	
-	struct Lista* l4 = malloc(sizeof(struct Lista));
-	l4->valor = 4;
+    struct Lista* l4 = malloc(sizeof(struct Lista));
+    l4->valor = 4;
     l4->prox  = NULL;
     
-	struct Lista* l3 = malloc(sizeof(struct Lista));
-	l3->valor = 3;
+    struct Lista* l3 = malloc(sizeof(struct Lista));
+    l3->valor = 3;
     l3->prox  = l4;
     
     struct Lista* l2 = malloc(sizeof(struct Lista));
@@ -26,6 +26,6 @@ int main(void){
     l1->prox = l2;
     
     printf("%d -> %d -> %d -> %d\n", l1->valor, (*(l1->prox)).valor, (*(l2->prox)).valor, (*(l3->prox)).valor);  
-	return 0; 
+    return 0;
     
 }

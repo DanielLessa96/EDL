@@ -1,0 +1,18 @@
+l1 :: [[Float]]
+l1 = [ [1,12,-13], [1,2,1], [2,-16,-18], [2,1,2] ]
+
+raizes:: [Float] -> [Float]
+raizes [a, b, c] = if nraizes a b c == 0 then []
+              else if nraizes a b c == 1 then [-b/(2*a)]
+              else if nraizes a b c == 2 then [(-b + delta)/(2*a),(-b-delta)/(2*a)]
+              else []
+              where delta = sqrt(b^2-(4*a*c))
+
+nraizes :: Float->Float->Float->Int
+nraizes a b c = if (((b^2)-4*a*c) < 0) then 0
+            else if (((b^2)-4*a*c) == 0) then 1
+            else 2
+
+
+main =  do 
+ print (map raizes l1) 

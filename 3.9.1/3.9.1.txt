@@ -1,0 +1,20 @@
+type Aluno = (String, Float, Float)
+
+nome :: Aluno -> String
+nome (x,_,_) = x
+
+notaP1 :: Aluno -> Float
+notaP1 (_,y,_) = y
+
+notaP2 :: Aluno -> Float
+notaP2 (_,_,z) = z
+
+media :: Aluno -> Float
+media (x,y,z) = (y+z)/2
+
+als = [ ("Daniel",6.5,8.5),("Leandro",8.7,6.4),("Rebeca",4.4,6.1),("Cristiane",10,8.5),("Pedro",5.5,2.5),("Juliana",6.0,8.0),("Davi",3.5,6.0),("Thiago",8.5,5.5),("Maria",7.5,8.0),("Joao",4.5,3.0) ]
+
+main = do
+ print ((foldr1 (+) (map media als))/ fromIntegral(length(als)))
+ print (length(filter(\x -> media(x)>=7) als))
+ print ( (foldr1 (+) (map media (filter(\x -> media(x)<7) als))) / fromIntegral(length(filter(\x -> media(x)<7) als)) )

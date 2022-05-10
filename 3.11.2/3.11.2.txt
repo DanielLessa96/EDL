@@ -36,7 +36,7 @@ pretty_print n =
   putStr "Musica: "
   putStrLn (nomes !! i) 
   putStr "Autores: "
-  print (autores !! i)
+  putStrLn (intercalate "," (autores !! i))
   putStr "Duracao: " 
   print (durs !! i)
   pretty_print(n-1)
